@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:padding="32dp"
+        android:id="@+id/top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:text="What is your gender?"
+            android:textColor="@color/textColor"
+            android:textSize="36sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/know"
+            android:layout_marginTop="10dp"
+            android:text="Let us know you better"
+            android:layout_below="@id/title"
+            android:layout_gravity="center"
+            android:textColor="@color/textColor"
+            android:textSize="22sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gender"
+        android:orientation="horizontal"
+        android:layout_below="@id/top"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:id="@+id/female_linear"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/gender_border"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/female_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/female_label"
+                android:text="Female"
+                android:textColor="@color/textColor"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:id="@+id/male_linear"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/gender_border"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/male_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/male_label"
+                android:text="Male"
+                android:textColor="@color/textColor"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/others"
+        android:text="None of the above"
+        android:layout_below="@id/gender"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gender_continue"
+        android:text="Continue"
+        android:textSize="26sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/home" />
+</RelativeLayout>

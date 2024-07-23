@@ -1,0 +1,219 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="40dp"
+        android:id="@+id/top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/goal"
+            android:text="What is your goal?"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/know"
+            android:layout_below="@id/goal"
+            android:text="Let us know you better"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:id="@+id/top_linear"
+        android:layout_below="@id/top"
+        android:layout_margin="20dp"
+        android:background="@drawable/goal_border"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            >
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/in1_linear"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lose_weight"
+                    android:text="Lose weight"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Burn fat and get lean"
+                    android:textColor="@color/white"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fire_image"
+                android:src="@mipmap/fire"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/in1_linear"
+                android:layout_marginLeft="20dp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:id="@+id/mid_linear"
+        android:layout_below="@id/top_linear"
+        android:layout_margin="20dp"
+        android:background="@drawable/goal_border"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            >
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/in2_linear"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/get_fitter"
+                    android:text="Get fitter"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tone up and feel healthy"
+                    android:textColor="@color/white"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardio"
+                android:src="@mipmap/cardio"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/in2_linear"
+                android:layout_marginLeft="20dp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:id="@+id/bottom_linear"
+        android:layout_margin="20dp"
+        android:layout_below="@id/mid_linear"
+        android:background="@drawable/goal_border"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            >
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/in3_linear"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gain_muscles"
+                    android:text="Gain muscles"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Build mass and strength"
+                    android:textColor="@color/white"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dumbbell"
+                android:src="@mipmap/dumbbell1"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/in3_linear"
+                android:layout_marginLeft="20dp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/set_goal"
+        android:text="Continue"
+        android:textSize="26sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:backgroundTint="@color/home"
+        android:background="@drawable/button_background"
+        />
+
+</RelativeLayout>

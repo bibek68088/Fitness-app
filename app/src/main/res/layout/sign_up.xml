@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:text="Total Fitness"
+        android:padding="30dp"
+        android:textColor="@color/textColor"
+        android:textSize="30sp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:id="@+id/create_account"
+        android:text="Create Account"
+        android:layout_marginLeft="20dp"
+        android:layout_margin="20dp"
+        android:textSize="36sp"
+        android:layout_below="@id/title"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fullname"
+        android:layout_below="@id/create_account"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:hint="Full Name"
+        android:drawableLeft="@mipmap/user"
+        android:drawablePadding="10dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_background" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone"
+        android:hint="Phone"
+        android:drawableLeft="@mipmap/phone"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:textColorHint="@color/textColor"
+        android:layout_below="@id/fullname"
+        android:textColor="@color/textColor"
+        android:background="@drawable/edittext_background" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:hint="Email"
+        android:textColorHint="@color/textColor"
+        android:drawableLeft="@mipmap/email"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:textColor="@color/textColor"
+        android:layout_margin="10dp"
+        android:layout_below="@id/phone"
+        android:background="@drawable/edittext_background" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:hint="Password"
+        android:drawableLeft="@mipmap/password"
+        android:drawableRight="@mipmap/show"
+        android:textColorHint="@color/textColor"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:textColor="@color/textColor"
+        android:layout_margin="10dp"
+        android:layout_below="@id/email"
+        android:background="@drawable/edittext_background" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/confirm_password"
+        android:hint="Confirm Password"
+        android:drawableLeft="@mipmap/password"
+        android:drawableRight="@mipmap/show"
+        android:drawablePadding="10dp"
+        android:textColorHint="@color/textColor"
+        android:padding="10dp"
+        android:textColor="@color/textColor"
+        android:layout_margin="10dp"
+        android:layout_below="@id/password"
+        android:background="@drawable/edittext_background" />
+
+    <Button
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/signup_button"
+        android:text="SIGN UP"
+        android:padding="20dp"
+        android:textSize="18sp"
+        android:backgroundTint="@color/home"
+        android:background="@drawable/button_background"
+        android:layout_below="@id/confirm_password"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_text"
+        android:textSize="16sp"
+        android:text="Already have an account"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/signup_button"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/log_in_new"
+        android:text="Log In"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:layout_below="@id/signup_button"
+        android:layout_toRightOf="@id/login_text"
+        android:textColor="@color/home"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>

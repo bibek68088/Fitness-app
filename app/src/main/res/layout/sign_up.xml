@@ -1,9 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgColor"
-    >
-
+    android:background="@color/bgColor">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,8 +11,7 @@
         android:padding="30dp"
         android:textColor="@color/textColor"
         android:textSize="30sp"
-        android:gravity="center"
-        />
+        android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
@@ -23,10 +20,9 @@
         android:id="@+id/create_account"
         android:text="Create Account"
         android:layout_marginLeft="20dp"
-        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
         android:textSize="36sp"
-        android:layout_below="@id/title"
-        />
+        android:layout_below="@id/title" />
 
     <EditText
         android:layout_width="match_parent"
@@ -38,8 +34,8 @@
         android:hint="Full Name"
         android:drawableLeft="@mipmap/user"
         android:drawablePadding="10dp"
+        android:padding="15dp"
         android:layout_margin="10dp"
-        android:padding="10dp"
         android:background="@drawable/edittext_background" />
 
     <EditText
@@ -49,12 +45,12 @@
         android:hint="Phone"
         android:drawableLeft="@mipmap/phone"
         android:drawablePadding="10dp"
-        android:padding="10dp"
+        android:padding="15dp"
         android:layout_margin="10dp"
         android:textColorHint="@color/textColor"
-        android:layout_below="@id/fullname"
         android:textColor="@color/textColor"
-        android:background="@drawable/edittext_background" />
+        android:background="@drawable/edittext_background"
+        android:layout_below="@id/fullname" />
 
     <EditText
         android:layout_width="match_parent"
@@ -64,41 +60,73 @@
         android:textColorHint="@color/textColor"
         android:drawableLeft="@mipmap/email"
         android:drawablePadding="10dp"
-        android:padding="10dp"
-        android:textColor="@color/textColor"
+        android:padding="15dp"
         android:layout_margin="10dp"
-        android:layout_below="@id/phone"
-        android:background="@drawable/edittext_background" />
+        android:textColor="@color/textColor"
+        android:background="@drawable/edittext_background"
+        android:layout_below="@id/phone" />
 
-    <EditText
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:hint="Password"
-        android:drawableLeft="@mipmap/password"
-        android:drawableRight="@mipmap/show"
-        android:textColorHint="@color/textColor"
-        android:drawablePadding="10dp"
-        android:padding="10dp"
-        android:textColor="@color/textColor"
-        android:layout_margin="10dp"
+        android:id="@+id/relPassword"
         android:layout_below="@id/email"
-        android:background="@drawable/edittext_background" />
+        android:padding="10dp">
 
-    <EditText
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:drawableLeft="@mipmap/password"
+            android:drawablePadding="10dp"
+            android:textColorHint="@color/textColor"
+            android:padding="15dp"
+            android:textColor="@color/textColor"
+            android:background="@drawable/edittext_background" />
+
+        <ImageView
+            android:id="@+id/togglePasswordVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@mipmap/hide"
+            android:contentDescription="Toggle Password Visibility"/>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/confirm_password"
-        android:hint="Confirm Password"
-        android:drawableLeft="@mipmap/password"
-        android:drawableRight="@mipmap/show"
-        android:drawablePadding="10dp"
-        android:textColorHint="@color/textColor"
-        android:padding="10dp"
-        android:textColor="@color/textColor"
-        android:layout_margin="10dp"
-        android:layout_below="@id/password"
-        android:background="@drawable/edittext_background" />
+        android:id="@+id/relConfirmPassword"
+        android:layout_below="@id/relPassword"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:drawableLeft="@mipmap/password"
+            android:drawablePadding="10dp"
+            android:textColorHint="@color/textColor"
+            android:padding="15dp"
+            android:textColor="@color/textColor"
+            android:background="@drawable/edittext_background" />
+
+        <ImageView
+            android:id="@+id/toggleConfirmPasswordVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@mipmap/hide"
+            android:contentDescription="Toggle Confirm Password Visibility"/>
+    </RelativeLayout>
 
     <Button
         android:layout_width="270dp"
@@ -109,21 +137,20 @@
         android:textSize="18sp"
         android:backgroundTint="@color/home"
         android:background="@drawable/button_background"
-        android:layout_below="@id/confirm_password"
+        android:layout_below="@id/relConfirmPassword"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        />
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/login_text"
         android:textSize="16sp"
-        android:text="Already have an account"
+        android:textColor="@color/textColor"
+        android:text="Already have an account? "
         android:layout_centerHorizontal="true"
         android:layout_below="@id/signup_button"
-        android:layout_margin="10dp"
-        />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -135,7 +162,6 @@
         android:layout_below="@id/signup_button"
         android:layout_toRightOf="@id/login_text"
         android:textColor="@color/home"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
 </RelativeLayout>

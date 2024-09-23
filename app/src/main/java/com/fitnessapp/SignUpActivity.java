@@ -2,23 +2,19 @@ package com.fitnessapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkError;
-import com.android.volley.NoConnectionError;
-import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.ServerError;
-import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -34,6 +30,9 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText fullNameEditText, phoneEditText, emailEditText, passwordEditText, confirmPasswordEditText;
     private Button signupButton;
     private TextView loginTextView;
+    private ImageView togglePasswordVisibility, toggleConfirmPasswordVisibility;
+    private boolean isPasswordVisible = false;
+    private boolean isConfirmPasswordVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +47,8 @@ public class SignUpActivity extends AppCompatActivity {
         confirmPasswordEditText = findViewById(R.id.confirm_password);
         signupButton = findViewById(R.id.signup_button);
         loginTextView = findViewById(R.id.log_in_new);
+        togglePasswordVisibility = findViewById(R.id.togglePasswordVisibility);
+        toggleConfirmPasswordVisibility = findViewById(R.id.toggleConfirmPasswordVisibility);
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +64,38 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SignUpActivity.this, LogInActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // Password visibility toggle
+        togglePasswordVisibility.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isPasswordVisible) {
+                    passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    togglePasswordVisibility.setImageResource(R.mipmap.hide); // Change to hide icon
+                } else {
+                    passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    togglePasswordVisibility.setImageResource(R.mipmap.show); // Change to show icon
+                }
+                passwordEditText.setSelection(passwordEditText.length()); // Move cursor to end
+                isPasswordVisible = !isPasswordVisible;
+            }
+        });
+
+        // Confirm Password visibility toggle
+        toggleConfirmPasswordVisibility.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConfirmPasswordVisible) {
+                    confirmPasswordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    toggleConfirmPasswordVisibility.setImageResource(R.mipmap.hide); // Change to hide icon
+                } else {
+                    confirmPasswordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    toggleConfirmPasswordVisibility.setImageResource(R.mipmap.show); // Change to show icon
+                }
+                confirmPasswordEditText.setSelection(confirmPasswordEditText.length()); // Move cursor to end
+                isConfirmPasswordVisible = !isConfirmPasswordVisible;
             }
         });
     }
@@ -138,15 +171,15 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         String errorMessage = "An error occurred";
-                        if (error instanceof NetworkError || error instanceof NoConnectionError) {
+                        if (error instanceof com.android.volley.NetworkError || error instanceof com.android.volley.NoConnectionError) {
                             errorMessage = "Network error. Please check your connection.";
-                        } else if (error instanceof ServerError) {
+                        } else if (error instanceof com.android.volley.ServerError) {
                             errorMessage = "Server error. Please try again later.";
-                        } else if (error instanceof AuthFailureError) {
+                        } else if (error instanceof com.android.volley.AuthFailureError) {
                             errorMessage = "Authentication failure. Please check your credentials.";
-                        } else if (error instanceof ParseError) {
+                        } else if (error instanceof com.android.volley.ParseError) {
                             errorMessage = "Error parsing server response.";
-                        } else if (error instanceof TimeoutError) {
+                        } else if (error instanceof com.android.volley.TimeoutError) {
                             errorMessage = "Request timed out. Please try again.";
                         }
                         Toast.makeText(SignUpActivity.this, errorMessage, Toast.LENGTH_LONG).show();

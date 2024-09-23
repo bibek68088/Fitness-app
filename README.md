@@ -1,2 +1,0 @@
---Install android-studio
---Clone the repository at the source folder

@@ -2,9 +2,12 @@ package com.fitnessapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +32,8 @@ public class LogInActivity extends AppCompatActivity {
     private EditText emailEditText, passwordEditText;
     private Button loginButton;
     private TextView signUpTextView;
+    private ImageView showHidePassword;
+    private boolean isPasswordVisible = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,7 +45,27 @@ public class LogInActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.login_button);
         signUpTextView = findViewById(R.id.sign_up_new);
+        showHidePassword = findViewById(R.id.show_hide_password);
 
+        // Toggle password visibility
+        showHidePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isPasswordVisible) {
+                    // Hide password
+                    passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    showHidePassword.setImageResource(R.mipmap.show);
+                } else {
+                    // Show password
+                    passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    showHidePassword.setImageResource(R.mipmap.hide);
+                }
+                isPasswordVisible = !isPasswordVisible;
+                passwordEditText.setSelection(passwordEditText.getText().length());
+            }
+        });
+
+        // Handle login button click
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +75,7 @@ public class LogInActivity extends AppCompatActivity {
             }
         });
 
+        // Handle sign up click
         signUpTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +103,7 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String url = "http://10.0.2.2/fitness/login.php";  // Replace with your server IP if necessary
+        String url = "http://10.0.2.2/fitness/login.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -92,7 +118,7 @@ public class LogInActivity extends AppCompatActivity {
                                 // Navigate to HomeActivity if login is successful
                                 Intent intent = new Intent(LogInActivity.this, HomePageActivity.class);
                                 startActivity(intent);
-                                finish();  // Optional: Close the LoginActivity after successful login
+                                finish();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

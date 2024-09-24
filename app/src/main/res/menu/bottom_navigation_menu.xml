@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_home"
+        android:enabled="true"
+        android:icon="@mipmap/home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/page_workouts"
+        android:enabled="true"
+        android:icon="@mipmap/workout"
+        android:title="Workouts"/>
+    <item
+        android:id="@+id/page_diet"
+        android:enabled="true"
+        android:icon="@mipmap/diet"
+        android:title="Diet"
+        />
+    <item
+        android:id="@+id/page_settings"
+        android:enabled="true"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Profile"/>
+</menu>

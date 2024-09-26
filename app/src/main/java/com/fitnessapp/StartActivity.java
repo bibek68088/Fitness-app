@@ -9,13 +9,12 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.start_page);
+        setContentView(R.layout.start_page_layout);
 
         Button getStartedButton = findViewById(R.id.get_started_button);
         getStartedButton.setOnClickListener(new View.OnClickListener() {

@@ -38,7 +38,7 @@ public class LogInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.login_layout);
 
         // Initialize views
         emailEditText = findViewById(R.id.email);
@@ -116,7 +116,7 @@ public class LogInActivity extends AppCompatActivity {
 
                             if (message.equals("Login successful")) {
                                 // Navigate to HomeActivity if login is successful
-                                Intent intent = new Intent(LogInActivity.this, HomePageActivity.class);
+                                Intent intent = new Intent(LogInActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }

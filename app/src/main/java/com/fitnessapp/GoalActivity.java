@@ -12,7 +12,7 @@ public class GoalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.goal);
+        setContentView(R.layout.goal_layout);
 
         Button set_goal = findViewById(R.id.set_goal);
         set_goal.setOnClickListener(new View.OnClickListener() {

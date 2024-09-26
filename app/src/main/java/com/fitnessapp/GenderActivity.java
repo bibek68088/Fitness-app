@@ -12,7 +12,7 @@ public class GenderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gender);
+        setContentView(R.layout.gender_layout);
 
         Button gender_continue = findViewById(R.id.gender_continue);
 

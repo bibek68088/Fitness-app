@@ -28,8 +28,8 @@ public class StartActivity extends AppCompatActivity {
 //        Picasso.get()
 //                .load("https://www.onlinekhabar.com/wp-content/uploads/2020/12/Mount-Everest-Sagarmatha.jpg")
 //                .into(showimage);
-        Glide.with(this).load("https://www.onlinekhabar.com/wp-content/uploads/2020/12/Mount-Everest-Sagarmatha.jpg")
-                .into(showimage);
+//        Glide.with(this).load("https://www.onlinekhabar.com/wp-content/uploads/2020/12/Mount-Everest-Sagarmatha.jpg")
+//                .into(showimage);
 
 
     }
